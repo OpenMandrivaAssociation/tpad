@@ -30,11 +30,15 @@ The executable `tpad' is a wish(1) shell script.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-mkdir -p $RPM_BUILD_ROOT/%_menudir
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%name
-?package(%{name}):command="/usr/bin/tpad" \
-icon="editors_section.png" needs="X11" section="More Applications/Editors" \
-title="TPad" longtitle="Simple clone of Notepad"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%name.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/tpad
+Icon=editors_section
+Categories=TextEditor;
+Name=TPad
+Comment=Simple clone of Notepad
 EOF
 
 install -d $RPM_BUILD_ROOT/%{_bindir}
@@ -78,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/tview
 %{_libdir}/tpad%{version}
 %{_datadir}/tpad
-%{_menudir}/%name
+%{_datadir}/applications/mandriva-%name.desktop
 %defattr(644,root,root,0755)
 %config(noreplace) %{_sysconfdir}/tpad.conf
 
