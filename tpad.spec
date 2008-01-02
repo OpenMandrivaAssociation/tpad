@@ -10,6 +10,7 @@ Source0:	http://monitor.deis.unical.it/ant/tpad/%{name}-%{version}.tar.bz2
 Patch0:		tpad-1.3.patch.bz2
 URL:		http://tclpad.sourceforge.net
 Group:		Editors
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 Requires:	tk >= 8.4
 Requires:	tcl
