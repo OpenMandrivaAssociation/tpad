@@ -1,6 +1,6 @@
 %define name	tpad
 %define version	1.3
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 Name:		%{name}
 Summary:	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
@@ -43,16 +43,16 @@ Comment=Simple clone of Notepad
 EOF
 
 install -d $RPM_BUILD_ROOT/%{_bindir}
-install -d $RPM_BUILD_ROOT/%{_libdir}/tpad%{version}/msgs
+install -d $RPM_BUILD_ROOT/%{_prefix}/lib/tpad%{version}/msgs
 install -d $RPM_BUILD_ROOT/%{_sysconfdir}
 install -d $RPM_BUILD_ROOT/%{_mandir}/man1
 install -d $RPM_BUILD_ROOT/%{_datadir}/tpad
 install bin/tpad $RPM_BUILD_ROOT/%{_bindir}/tpad
 for libfile in lib/tpad%{version}/*.tcl; do
-	install $libfile $RPM_BUILD_ROOT/%{_libdir}/tpad%{version};
+	install $libfile $RPM_BUILD_ROOT/%{_prefix}/lib/tpad%{version};
 done
 for msgfile in lib/tpad%{version}/msgs/*.msg; do
-	install $msgfile $RPM_BUILD_ROOT/%{_libdir}/tpad%{version}/msgs;
+	install $msgfile $RPM_BUILD_ROOT/%{_prefix}/lib/tpad%{version}/msgs;
 done
 install etc/tpad.conf $RPM_BUILD_ROOT/%{_sysconfdir}/tpad.conf
 install man/man1/tpad.1 $RPM_BUILD_ROOT/%{_mandir}/man1/tpad.1
@@ -81,9 +81,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/tview.1*
 %{_bindir}/tpad
 %{_bindir}/tview
-%{_libdir}/tpad%{version}
+%{_prefix}/lib/tpad%{version}
 %{_datadir}/tpad
 %{_datadir}/applications/mandriva-%name.desktop
 %defattr(644,root,root,0755)
 %config(noreplace) %{_sysconfdir}/tpad.conf
-
