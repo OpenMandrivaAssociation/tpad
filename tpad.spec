@@ -7,11 +7,12 @@ Summary:	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
 Version:	%{version}
 Release:	%{release}
 Source0:	http://monitor.deis.unical.it/ant/tpad/%{name}-%{version}.tar.bz2
-Patch0:		tpad-1.3.patch.bz2
+Patch0:		tpad-1.3.patch
+Patch1:		tpad-1.3-use-general-wish.patch
 URL:		http://tclpad.sourceforge.net
 Group:		Editors
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-License:	GPL
+License:	GPLv2+
 Requires:	tk >= 8.4
 Requires:	tcl
 BuildArch:	noarch
@@ -27,6 +28,7 @@ The executable `tpad' is a wish(1) shell script.
 %prep  
 %setup -q -c %{name}-%{version}
 %patch0 -p1 -b .ant
+%patch1 -p0 -b .wish
 
 %install
 rm -rf $RPM_BUILD_ROOT
