@@ -1,6 +1,6 @@
 %define name	tpad
 %define version	1.3
-%define release	%mkrel 3
+%define release	%mkrel 4
 
 Name:		%{name}
 Summary:	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
