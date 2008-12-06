@@ -11,6 +11,8 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 Requires:	tk >= 8.4
 Requires:	tcl
+# For macros
+BuildRequires:	tcl-devel
 BuildArch:	noarch
 
 %description
