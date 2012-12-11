@@ -90,3 +90,45 @@ rm -rf %{buildroot}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %defattr(644,root,root,0755)
 %config(noreplace) %{_sysconfdir}/tpad.conf
+
+
+%changelog
+* Sun Sep 20 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.3-6mdv2010.0
++ Revision: 445547
+- rebuild
+
+* Sat Dec 06 2008 Adam Williamson <awilliamson@mandriva.org> 1.3-5mdv2009.1
++ Revision: 310992
+- buildrequires tcl-devel for macros
+- rebuild for new tcl
+- install to new location per policy
+- spec clean
+
+* Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.3-4mdv2009.0
++ Revision: 269437
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Sun May 11 2008 Funda Wang <fundawang@mandriva.org> 1.3-3mdv2009.0
++ Revision: 205564
+- add patch to use general wish
+- fix noarch file
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Dec 20 2007 Thierry Vignaud <tvignaud@mandriva.com> 1.3-2mdv2008.1
++ Revision: 135461
+- auto-convert XDG menu entry
+- kill re-definition of %%buildroot on Pixel's request
+- import tpad
+
+
+* Thu Oct 20 2005 Lenny Cartier <lenny@mandriva.com> 1.3-2mdk
+- rebuild
+
+* Sun Sep 12 2004 Austin Acton <austin@mandrake.org> 1.3-1mdk
+- from Antonio Bonifati <ant@monitor.deis.unical.it>
+- added menu
