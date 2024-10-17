@@ -5,7 +5,7 @@ Release:	%{mkrel 6}
 Source0:	http://monitor.deis.unical.it/ant/tpad/%{name}-%{version}.tar.gz
 Patch0:		tpad-1.3.patch
 Patch1:		tpad-1.3-use-general-wish.patch
-URL:		http://tclpad.sourceforge.net
+URL:		https://tclpad.sourceforge.net
 Group:		Editors
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
